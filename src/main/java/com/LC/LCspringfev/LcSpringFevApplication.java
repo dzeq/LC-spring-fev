@@ -8,6 +8,7 @@ public class LcSpringFevApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LcSpringFevApplication.class, args);
+		System.out.println("hello world");
 	}
 
 }
