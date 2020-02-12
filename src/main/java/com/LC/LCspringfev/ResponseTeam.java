@@ -1,10 +1,19 @@
 package com.LC.LCspringfev;
 
 public class ResponseTeam {
-    String name;
-    String ID;
-    String tla;
-    Area area;
+    private String name;
+    private String founded;
+    private String ID;
+    private String tla;
+    private Area area;
+
+    public String getFounded() {
+        return founded;
+    }
+
+    public void setFounded(String founded) {
+        this.founded = founded;
+    }
 
     public ResponseTeam() {}
 
@@ -27,6 +36,7 @@ public class ResponseTeam {
                 ", ID='" + ID + '\'' +
                 ", tla='" + tla + '\'' +
                 ", area=" + area +
+                ", creationYear=" + founded +
                 '}';
     }
 

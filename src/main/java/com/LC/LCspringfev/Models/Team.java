@@ -10,15 +10,25 @@ public class Team {
     private String countryName;
     private String name;
     private String TLA;
+    private int creationYear;
+
+    public int getCreationYear() {
+        return creationYear;
+    }
+
+    public void setCreationYear(String creationYear) {
+        this.creationYear = Integer.parseInt(creationYear);
+    }
 
     public Team(){
     }
 
-    public Team(String id, String name, String TLA, String countryName) {
+    public Team(String id, String name, String TLA, String countryName, String creationYear) {
         this.id = id;
         this.countryName = countryName;
         this.name = name;
         this.TLA = TLA;
+        this.creationYear = Integer.parseInt(creationYear);
     }
 
     @Override
@@ -27,7 +37,8 @@ public class Team {
                 "id='" + id + '\'' +
                 ", countryName='" + countryName + '\'' +
                 ", name='" + name + '\'' +
-                ", TLA='" + TLA + '\'' +
+                ", Abreviation='" + TLA + '\'' +
+                ", creationYear='" + creationYear + '\'' +
                 '}';
     }
 
