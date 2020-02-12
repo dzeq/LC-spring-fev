@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,11 @@ public class TeamController {
         } else {
             return teamService.getAllTeams();
         }
+    }
+
+    @GetMapping(path = "/team/{teamId}")
+    public Team getTeamById(@PathVariable String teamId) {
+        logger.info("/team/{id} called");
+        return teamService.getTeamById(teamId);
     }
 }

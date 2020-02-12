@@ -34,4 +34,13 @@ public class TeamService {
         return teamRepository.getAllTeams();
     }
 
+    public Team getTeamById(String teamId) {
+        List<Team> teamsList = teamRepository.getAllTeams();
+
+        Team t = teamsList.stream()
+                .filter(v -> v.getId().equals(teamId)).findAny().orElse(null);
+
+        return t;
+    }
+
 }
