@@ -6,6 +6,13 @@ public class ResponseFromAPI {
 
         List<ResponseTeam> teams;
 
+        @Override
+        public String toString() {
+                return "ResponseFromAPI{" +
+                        "teams=" + teams +
+                        '}';
+        }
+
         public ResponseFromAPI() {}
 
         public List<ResponseTeam> getTeams() {

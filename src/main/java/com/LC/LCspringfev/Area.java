@@ -13,6 +13,14 @@ public class Area {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Area{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

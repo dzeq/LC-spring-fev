@@ -20,6 +20,16 @@ public class ResponseTeam {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "ResponseTeam{" +
+                "name='" + name + '\'' +
+                ", ID='" + ID + '\'' +
+                ", tla='" + tla + '\'' +
+                ", area=" + area +
+                '}';
+    }
+
     public void setName(String name) {
         this.name = name;
     }

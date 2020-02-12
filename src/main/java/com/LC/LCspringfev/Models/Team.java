@@ -21,6 +21,16 @@ public class Team {
         this.TLA = TLA;
     }
 
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id='" + id + '\'' +
+                ", countryName='" + countryName + '\'' +
+                ", name='" + name + '\'' +
+                ", TLA='" + TLA + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }
