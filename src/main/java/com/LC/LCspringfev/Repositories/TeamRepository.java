@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
+import sun.security.provider.SHA;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,9 +21,9 @@ public class TeamRepository {
     private Logger logger = LoggerFactory.getLogger(TeamRepository.class);
 
     @Value("${api_football_token}")
-    public String apiToken;
+    private String apiToken;
 
-    public List<Team> getAllTeams(){
+    public List<Team> getAllTeams() {
         final String uri = "http://api.football-data.org/v2/competitions/CL/teams?season=2018";
         logger.info("API called : " + uri);
         HttpHeaders headers = new HttpHeaders();
@@ -38,7 +39,7 @@ public class TeamRepository {
         logger.info("JSON complet " + responseFromAPI.toString());
         List<Team> list = responseFromAPI.getTeams().stream().map(
                 responseTeam -> {
-                    return new Team(responseTeam.getID(), responseTeam.getName(), responseTeam.getTLA(), responseTeam.getArea().getName());
+                    return new Team(responseTeam.getID(), responseTeam.getName(), responseTeam.getTLA(), responseTeam.getArea().getName(), responseTeam.getFounded());
                 }
         ).collect(Collectors.toList());
         logger.info("Team  " + list);
